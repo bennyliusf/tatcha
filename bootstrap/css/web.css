@@ -1,0 +1,46 @@
+.page{
+    padding: 10px;
+}
+
+#products-grid{
+    margin: -10px auto 0px;
+    width:980px;
+    line-height:30px;
+    border-radius:5px;
+    min-height:300px;
+}
+
+#loader-icon {
+    right: 3%;
+    bottom: 4%;
+    float: right;
+    clear: both;
+    position: fixed;
+    height: auto;
+    max-width: 100%;
+}
+
+
+#loader-icon2 {
+    right: 1%;
+    bottom: 1%;
+    float: right;
+    clear: both;
+    position: fixed;
+    height: auto;
+}
+
+ul li{
+    float: right;
+    list-style-type: none;
+    margin-left: 10px;
+}
+
+.cell{
+    float: left;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ddd;
+    margin: 20px;
+    text-align: center;
+}
