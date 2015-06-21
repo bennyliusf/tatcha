@@ -1,5 +1,6 @@
 <?php
 class Product{
+    // set limit=0 to get all products
     function __construct() {
         $i = 0;
         $result = $this->curlProductJSONDecode($this->iniUrl);
