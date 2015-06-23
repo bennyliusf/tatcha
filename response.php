@@ -41,10 +41,10 @@
                 $prodUrl = $prodPrefixUrl . $productId;
                 $productInfo = $prod->curlProductJSONDecode($prodUrl);
         
-                $output .= '<div class="cell"><a href="'. $productInfo->url. '" target="_blank">';
+                $output .= '<a style="float:left;" href="'. $productInfo->url. '" title="" data-toggle="popover" data-placement="bottom" data-content="'.htmlentities($value->short_description).'"><div class="cell">';
                 $output .= '<div class="title">' . $value->name .'</div>';
                 $output .= '<div class="image"><img src="' . $value->image_url . '" width="150px"></div>';
-                $output .= '</a></div>';
+                $output .= '</div></a>';
             }
         }
         

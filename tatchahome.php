@@ -1,12 +1,13 @@
-<html>
+<!DOCTYPE html>
 <title>Tatcha Interview Project</title>
 <head>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.css">                
-<link rel="stylesheet" href="bootstrap/css/web.css?v=909">                
+<link rel="stylesheet" href="bootstrap/css/web.css?v=409">                
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
-<script type="text/javascript" src="bootstrap/js/jquery-1.2.6.pack.js"></script>
+<script src="bootstrap/js/bootstrap-tooltip.js"></script>
+<script src="bootstrap/js/bootstrap-popover.js"></script>
 </head>
 <body>
     <div class="page">
@@ -28,6 +29,11 @@
             <?php include('response.php'); ?>
             
             </div>
+            <script>
+                $(function (){
+                   $('[data-toggle="popover"]').popover();
+                });
+            </script>
             <div class="footer"></div>
             
             <span id="loader-icon" style="display: none;"><img src="bootstrap/img/LoaderIcon.gif" /></span>
@@ -52,6 +58,10 @@
                 url: "response.php?sort="+sort,
                 success: function(result){
                         $("#products-grid").html(result);
+                            $(function (){
+                                $('[data-toggle="popover"]').popover();
+                            });
+
                         if ($(document).height() == $(window).height()) {
                             $("#loader-icon2").html('<a href="javascript: void(0)" onclick="getresult(\'response.php?page=2&limit='+passlimit+'\');"><button type="button" class="btn btn-info">Loading More</button></a>');
                             $("#loader-icon2").show();
@@ -75,6 +85,9 @@
                     },
                     success: function(data){
                             $("#products-grid").append(data);
+                            $(function (){
+                                $('[data-toggle="popover"]').popover();
+                            });
                             
                             if ($(document).height() > $(window).height()) {
                                 $("#loader-icon2").hide();
